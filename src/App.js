@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Background from "./Background";
+import "./App.scss";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+const App = () => {
+  const [hue, setHue] = useState(180);
+
+  const handleHueSliderChange = event => setHue(Number(event.target.value));
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--hue", hue);
+  }, [hue]);
+
+  return (
+    <div id="App">
+      <Background />
+      <div id="Content">
+        <h1>Hello, World!</h1>
+        <input
+          type="range"
+          min={0}
+          max={359}
+          value={hue}
+          onChange={handleHueSliderChange}
+        />
+        <p>
+          <output>{JSON.stringify({ hue }, null, 2)}</output>
+        </p>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
