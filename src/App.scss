@@ -19,8 +19,8 @@
       hsl(calc(var(--hue) + 30), 100%, 50%),
       hsl(calc(var(--hue) + 60), 100%, 50%)
     );
-    width: calc(20vw - 2px);
-    height: calc(20vw - 2px);
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
     transform: rotate(45deg);
     border: 1px solid hsl(calc(var(--hue) + 15), 100%, 50%);
   }
