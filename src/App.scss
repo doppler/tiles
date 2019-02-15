@@ -11,7 +11,11 @@
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  background: hsl(calc(var(--hue) + 45), 100%, 50%);
+  background: linear-gradient(
+    180deg,
+    hsl(calc(var(--hue) + 30), 100%, 50%),
+    hsl(calc(var(--hue) + 60), 100%, 50%)
+  );
   z-index: 0;
   .Cell {
     background: linear-gradient(
@@ -21,7 +25,7 @@
     );
     width: calc(10vw - 2px);
     height: calc(10vw - 2px);
-    transform: rotate(45deg);
+    transform: rotate(33.75deg);
     border: 1px solid hsl(calc(var(--hue) + 15), 100%, 50%);
   }
 }
@@ -29,6 +33,10 @@
 #Content {
   position: absolute;
   z-index: 1;
+  width: 100%;
+  input {
+    width: 100%;
+  }
   output {
     white-space: pre;
   }

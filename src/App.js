@@ -3,7 +3,7 @@ import Background from "./Background";
 import "./App.scss";
 
 const App = () => {
-  const [hue, setHue] = useState(180);
+  const [hue, setHue] = useState(0);
 
   const handleHueSliderChange = event => setHue(Number(event.target.value));
 
@@ -15,7 +15,6 @@ const App = () => {
     <div id="App">
       <Background />
       <div id="Content">
-        <h1>Hello, World!</h1>
         <input
           type="range"
           min={0}
@@ -23,9 +22,6 @@ const App = () => {
           value={hue}
           onChange={handleHueSliderChange}
         />
-        <p>
-          <output>{JSON.stringify({ hue }, null, 2)}</output>
-        </p>
       </div>
     </div>
   );

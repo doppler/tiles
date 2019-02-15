@@ -19,7 +19,13 @@ const Background = () => {
   return (
     <div id="Background">
       {Array.from({ length: numSquares }).map((_, i) => (
-        <div className="Cell" key={i} />
+        <div
+          className="Cell"
+          key={i}
+          style={{
+            transform: `rotate(${(numSquares / 90) * 9 * i}deg)`
+          }}
+        />
       ))}
     </div>
   );
